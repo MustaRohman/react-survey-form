@@ -1,3 +1,11 @@
 .Form {
     border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    
 }
