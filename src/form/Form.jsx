@@ -40,7 +40,7 @@ class Form extends Component {
         //      Title:         <input type="text" id="title" value={this.state.title}
         // onChange={(e) => this.handleChange(e)}></input>     </label>     <input
         // type="submit" value="Submit"></input> </form> < FormStep inputs = {} > </FormStep>)
-            <FormStep inputs={inputs} onChange={(e) => this.handleChange(e)}></FormStep>
+            <FormStep inputs={inputs} onChange={(e) => this.handleChange(e)} onSubmit={(e) => this.handleSubmit(e)}></FormStep>
         )
     }
 }
