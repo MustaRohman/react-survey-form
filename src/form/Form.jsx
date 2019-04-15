@@ -7,13 +7,14 @@ class Form extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            title: 'ss',
+            title: '',
             name: '',
             dob: '',
             location: '',
             dateTime: '',
             userFeedback: ''
         }
+        this.handleChange = this.handleChange.bind(this)
     }
 
     handleSubmit(event) {
@@ -21,16 +22,17 @@ class Form extends Component {
         event.preventDefault();
     }
 
-    handleChange(event) {
+    handleChange(key, value) {
         console.log(event.target.value);
-        this.setState({title: event.target.value})
+        // this.setState({title: event.target.value})
+        this.setState({[key]: value})
     }
 
     render() {
         const inputs = [
             {
                 label: 'Title',
-                key: 'label',
+                key: 'title',
                 type: 'text',
                 value: this.state.title
             }
@@ -40,7 +42,7 @@ class Form extends Component {
         //      Title:         <input type="text" id="title" value={this.state.title}
         // onChange={(e) => this.handleChange(e)}></input>     </label>     <input
         // type="submit" value="Submit"></input> </form> < FormStep inputs = {} > </FormStep>)
-            <FormStep inputs={inputs} onChange={(e) => this.handleChange(e)} onSubmit={(e) => this.handleSubmit(e)}></FormStep>
+            <FormStep inputs={inputs} onChange={this.handleChange} onSubmit={(e) => this.handleSubmit(e)}></FormStep>
         )
     }
 }
