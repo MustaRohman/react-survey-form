@@ -51,7 +51,7 @@ function FormStep(props) {
                             <div className="inputItem" key={index}>
                                 <label htmlFor={item.key}>{item.label + ':'}</label>
                                 <div>
-                                    <button onClick={(e) => handleLocationClick(e, item.key)}>
+                                    <button className="input" onClick={(e) => handleLocationClick(e, item.key)}>
                                         {item.value
                                             ? 'Lat: ' + item.value.latitude + ' Lon:' + item.value.longitude
                                             : 'Click to get Location'}
@@ -67,8 +67,7 @@ function FormStep(props) {
                             <div className="inputItem" key={index}>
                                 <label htmlFor={item.key}>{item.label + ':'}</label>
                                 <div>
-
-                                    <button onClick={(e) => handleDateTimeClick(e, item.key)}>
+                                    <button className="input" onClick= { (e) => handleDateTimeClick(e, item.key) }>
                                         {item.value
                                             ? item
                                                 .value
@@ -85,6 +84,7 @@ function FormStep(props) {
                             <div className="inputItem" key={index}>
                                 <label htmlFor={item.key}>{item.label + ':'}</label>
                                 <textarea
+                                    className="input"
                                     type={item.type}
                                     id={item.key}
                                     onChange={(e) => handleChange(e, item.key)}
