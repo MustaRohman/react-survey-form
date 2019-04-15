@@ -10,7 +10,7 @@ class Form extends Component {
             title: '',
             name: '',
             dob: '',
-            location: '',
+            location: null,
             dateTime: '',
             userFeedback: '',
             stepNumber: 0
@@ -39,7 +39,7 @@ class Form extends Component {
     }
 
     render() {
-        const inputs = [
+        const inputsOne = [
             {
                 label: 'Title',
                 key: 'title',
@@ -59,12 +59,31 @@ class Form extends Component {
                 value: this.state.dob
             },
         ]
+        const inputsTwo = [
+            {
+                label: 'Current Location',
+                key: 'location',
+                type: 'location',
+                value: this.state.location
+            },
+            {
+                label: 'Current Date/Time',
+                key: 'dateTime',
+                type: 'datetime-local',
+                value: this.state.dateTime
+            },
+            {
+                label: 'User Feedback',
+                key: 'userFeedback',
+                type: 'textArea',
+                value: this.state.userFeedback
+            },
+        ]
         return (
-        // <form className="Form" onSubmit={(e) => this.handleSubmit(e)}>     <label>
-        //      Title:         <input type="text" id="title" value={this.state.title}
-        // onChange={(e) => this.handleChange(e)}></input>     </label>     <input
-        // type="submit" value="Submit"></input> </form> < FormStep inputs = {} > </FormStep>)
-            <FormStep inputs={inputs} onChange={this.handleChange} onSubmit={(e) => this.handleSubmit(e)}></FormStep>
+            <div >
+                {this.state.stepNumber === 0 ? (<FormStep inputs={inputsOne} onChange={this.handleChange} onSubmit={(e) => this.handleSubmit(e)}></FormStep>): ''}
+                {this.state.stepNumber === 1 ? (<FormStep inputs={inputsTwo} onChange={this.handleChange} onSubmit={(e) => this.handleSubmit(e)}></FormStep>): ''}
+            </div>
         )
     }
 }
