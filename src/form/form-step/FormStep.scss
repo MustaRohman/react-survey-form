@@ -5,18 +5,28 @@
     .inputItem {
         display: flex;
         flex-direction: column;
-        margin-bottom: 5px;
-        font-size: 20px;
+        margin-bottom: 10px;
+        font-size: 25px;
+        @media only screen and (orientation: portrait) {
+            margin-bottom: 30px;
+            font-size: 60px;
+        }
     }
 
     input {
         border: 1px solid black;
-        font-size: 20px;
+        font-size: 25px;
+        @media only screen and (orientation: portrait) {
+            font-size: 60px;
+        }
     }
 
     .input {
         border: 1px solid black;
-        font-size: 20px;
+        font-size: 25px;
+        @media only screen and (orientation: portrait) {
+            font-size: 60px;
+        }
     }
 
     .bottom-buttons {

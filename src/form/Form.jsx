@@ -112,9 +112,9 @@ class Form extends Component {
             }
         ];
         return (
-            <div >
+            <div className="Form">
                 {!this.state.isComplete
-                    ? <h2>Please enter your details in the form below</h2>
+                    ? <h2 className="instruction">Please enter your details in the form below</h2>
                     : ''}
                 {this.state.stepNumber === 0 && !this.state.isComplete
                     ? (
