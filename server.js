@@ -15,5 +15,6 @@ app.listen(port, () => {
 })
 
 app.post('/submit-survey', (req, res) => {
-    console.log('survey form route');
+    console.log('survey form route', req.body);
+    res.send('Success');
 })

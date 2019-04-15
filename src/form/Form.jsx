@@ -42,7 +42,13 @@ class Form extends Component {
                 // Request to API endpoint 'submit-survey'
                 this.setState({isComplete: true});
                 console.log(this.state);
-                alert('Thank you for completing the survey!');
+                fetch('/submit-survey', {method: 'POST', body: JSON.stringify(this.state)}).then(res => {
+                    console.log('success');
+                    
+                }).catch(err => {
+                    console.log(err);
+                })
+                // alert('Thank you for completing the survey!');
             }
         }
     }
