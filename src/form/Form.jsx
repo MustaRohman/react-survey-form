@@ -68,7 +68,7 @@ class Form extends Component {
             {
                 label: 'Current Date/Time',
                 key: 'dateTime',
-                type: 'datetime-local',
+                type: 'datetime',
                 value: this.state.dateTime
             },
             {
