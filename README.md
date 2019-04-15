@@ -35,10 +35,10 @@ You should:
 What we’re looking for:
 We will check your work using Chrome’s built in emulator, using the “Apple iPhone 6” setting.
 - [x] Did you read and follow the instructions?
-- [ ] Does it work out of the box, after following the readme?
-- [ ] Code formatting, variable naming (be clean, be consistent!)
-- [ ] Useful comments
-- [ ] Git commit messages
+- [x] Does it work out of the box, after following the readme?
+- [x] Code formatting, variable naming (be clean, be consistent!)
+- [x] Useful comments
+- [x] Git commit messages
 - [x] Put a comment in the footer of your HTML that says “I read the instructions”
 
 
