@@ -13,10 +13,15 @@ class Form extends Component {
             location: '',
             dateTime: '',
             userFeedback: '',
-            stepNumber: 0
+            stepNumber: 0,
+            isComplete: false
         }
-        this.handleChange = this.handleChange.bind(this)
-        this.handlePrev = this.handlePrev.bind(this);
+        this.handleChange = this
+            .handleChange
+            .bind(this)
+        this.handlePrev = this
+            .handlePrev
+            .bind(this);
     }
 
     handleSubmit(event) {
@@ -35,6 +40,7 @@ class Form extends Component {
                 alert('Please ensure that all fields are complete before clicking submit');
             } else {
                 // Request to API endpoint 'submit-survey'
+                this.setState({isComplete: true});
                 console.log(this.state);
                 alert('Thank you for completing the survey!');
             }
@@ -61,19 +67,17 @@ class Form extends Component {
                 key: 'title',
                 type: 'text',
                 value: this.state.title
-            },
-            {
+            }, {
                 label: 'Name',
                 key: 'name',
                 type: 'text',
                 value: this.state.name
-            },
-            {
+            }, {
                 label: 'Date of Birth',
                 key: 'dob',
                 type: 'date',
                 value: this.state.dob
-            },
+            }
         ]
         const inputsTwo = [
             {
@@ -81,24 +85,43 @@ class Form extends Component {
                 key: 'location',
                 type: 'location',
                 value: this.state.location
-            },
-            {
+            }, {
                 label: 'Current Date/Time',
                 key: 'dateTime',
                 type: 'datetime',
                 value: this.state.dateTime
-            },
-            {
+            }, {
                 label: 'User Feedback',
                 key: 'userFeedback',
                 type: 'textarea',
                 value: this.state.userFeedback
-            },
-        ]
+            }
+        ];
         return (
             <div >
-                {this.state.stepNumber === 0 ? (<FormStep inputs={inputsOne} onChange={this.handleChange} onSubmit={(e) => this.handleSubmit(e)}></FormStep>): ''}
-                {this.state.stepNumber === 1 ? (<FormStep inputs={inputsTwo} onChange={this.handleChange} onSubmit={(e) => this.handleSubmit(e)} onPrevClick={this.handlePrev}></FormStep>): ''}
+                {!this.state.isComplete
+                    ? <h2>Please enter your details in the form below</h2>
+                    : ''}
+                {this.state.stepNumber === 0 && !this.state.isComplete
+                    ? (
+                        <FormStep
+                            inputs={inputsOne}
+                            onChange={this.handleChange}
+                            onSubmit={(e) => this.handleSubmit(e)}></FormStep>
+                    )
+                    : ''}
+                {this.state.stepNumber === 1 && !this.state.isComplete
+                    ? (
+                        <FormStep
+                            inputs={inputsTwo}
+                            onChange={this.handleChange}
+                            onSubmit={(e) => this.handleSubmit(e)}
+                            onPrevClick={this.handlePrev}></FormStep>
+                    )
+                    : ''}
+                {this.state.isComplete
+                    ? <h1>Thank you for completing the survey!</h1>
+                    : ''}
             </div>
         )
     }

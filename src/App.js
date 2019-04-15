@@ -8,7 +8,6 @@ class App extends Component {
         return (
             <div className="App">
                 <h1>Survey Form</h1>
-                <h2>Please enter your details in the form below</h2>
                 <Form></Form>
             </div>
         );
