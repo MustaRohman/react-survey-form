@@ -2,14 +2,16 @@ import React from 'react';
 import * as moment from 'moment';
 import './FormStep.scss'
 
+/**
+ * Represents a 'page' or 'step' in the Form component
+ * PROPS
+ * inputs: [{label, key, type, value}]
+ * onChange: (key, value) => {}
+ * onSubmit: (ev) => {}
+ * onPrev: () => {}
+ * @param {*} props
+ */
 function FormStep(props) {
-    /**
-     * PROPS
-     * inputs: [{label, key, type, value}]
-     * onChange: (key, value) => {}
-     * onSubmit: (ev) => {}
-     * onPrev: () => {}
-     */
     function handleChange(ev, key) {
         ev.preventDefault();
         console.log('handleChange', key);

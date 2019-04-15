@@ -24,7 +24,6 @@ class Form extends Component {
     }
 
     handleSubmit(event) {
-        console.log('submit', event);
         let stepNumber = this.state.stepNumber;
         event.preventDefault();
         if (stepNumber === 0) {
@@ -45,7 +44,6 @@ class Form extends Component {
                         longitude: this.state.location.longitude
                     }
                 };
-                this.setState({isComplete: true});
                 fetch('/submit-survey', {
                     headers: {
                         'Accept': 'application/json',
@@ -54,6 +52,7 @@ class Form extends Component {
                     method: 'POST',
                     body: JSON.stringify(state)
                 }).then(res => {
+                    this.setState({isComplete: true});
                     console.log('success');
                 }).catch(err => {
                     console.log(err);
