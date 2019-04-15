@@ -7,6 +7,7 @@ function FormStep(props) {
      * inputs: [{label, key, type, value}]
      * onChange: (key, value) => {}
      * onSubmit: (ev) => {}
+     * onPrev: () => {}
      */
     function handleChange(ev, key) {
         ev.preventDefault();
