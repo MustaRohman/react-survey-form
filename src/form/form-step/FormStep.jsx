@@ -114,7 +114,6 @@ function FormStep(props) {
                 {props.onPrevClick
                     ? (
                         <input
-                            className="submit"
                             onClick={props.onPrevClick}
                             type="submit"
                             value="Back"></input>
