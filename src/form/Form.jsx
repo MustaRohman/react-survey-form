@@ -35,7 +35,19 @@ class Form extends Component {
                 key: 'title',
                 type: 'text',
                 value: this.state.title
-            }
+            },
+            {
+                label: 'Name',
+                key: 'name',
+                type: 'text',
+                value: this.state.name
+            },
+            {
+                label: 'Date of Birth',
+                key: 'dob',
+                type: 'date',
+                value: this.state.dob
+            },
         ]
         return (
         // <form className="Form" onSubmit={(e) => this.handleSubmit(e)}>     <label>
