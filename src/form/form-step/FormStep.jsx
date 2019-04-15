@@ -113,10 +113,7 @@ function FormStep(props) {
             <div className="bottom-buttons">
                 {props.onPrevClick
                     ? (
-                        <input
-                            onClick={props.onPrevClick}
-                            type="submit"
-                            value="Back"></input>
+                        <input onClick={props.onPrevClick} type="submit" value="Back"></input>
                     )
                     : ''}
                 <input className="submit" type="submit"></input>

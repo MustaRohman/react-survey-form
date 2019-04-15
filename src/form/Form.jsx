@@ -3,7 +3,6 @@ import './Form.scss';
 import FormStep from './form-step/FormStep';
 
 class Form extends Component {
-
     constructor(props) {
         super(props);
         this.state = {
@@ -39,10 +38,14 @@ class Form extends Component {
             if (!this.state.location || !this.state.dateTime || !this.state.userFeedback) {
                 alert('Please ensure that all fields are complete before clicking submit');
             } else {
-                // Request to API endpoint 'submit-survey'
-                const state = {...this.state, location: {latitude: this.state.location.latitude, longitude: this.state.location.longitude}};
+                const state = {
+                    ...this.state,
+                    location: {
+                        latitude: this.state.location.latitude,
+                        longitude: this.state.location.longitude
+                    }
+                };
                 this.setState({isComplete: true});
-                console.log(this.state);
                 fetch('/submit-survey', {
                     headers: {
                         'Accept': 'application/json',
@@ -52,11 +55,9 @@ class Form extends Component {
                     body: JSON.stringify(state)
                 }).then(res => {
                     console.log('success');
-
                 }).catch(err => {
                     console.log(err);
                 })
-                // alert('Thank you for completing the survey!');
             }
         }
     }
@@ -70,7 +71,6 @@ class Form extends Component {
     }
 
     handleChange(key, value) {
-        // this.setState({title: event.target.value})
         this.setState({[key]: value})
     }
 
