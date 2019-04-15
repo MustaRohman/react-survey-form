@@ -50,11 +50,14 @@ function FormStep(props) {
                         return (
                             <div className="inputItem" key={index}>
                                 <label htmlFor={item.key}>{item.label + ':'}</label>
-                                <button onClick={(e) => handleLocationClick(e, item.key)}>
-                                    {item.value
-                                        ? 'Lat: ' + item.value.latitude + ' Lon:' + item.value.longitude
-                                        : 'Click to get Location'}
-                                </button>
+                                <div>
+                                    <button onClick={(e) => handleLocationClick(e, item.key)}>
+                                        {item.value
+                                            ? 'Lat: ' + item.value.latitude + ' Lon:' + item.value.longitude
+                                            : 'Click to get Location'}
+                                    </button>
+
+                                </div>
                             </div>
                         )
                     }
@@ -108,7 +111,15 @@ function FormStep(props) {
         <form className="FormStep" onSubmit={props.onSubmit}>
             {inputs}
             <div className="bottom-buttons">
-                {props.onPrevClick ? (<input className="submit" onClick={props.onPrevClick} type="submit" value="Back"></input>) : ''}
+                {props.onPrevClick
+                    ? (
+                        <input
+                            className="submit"
+                            onClick={props.onPrevClick}
+                            type="submit"
+                            value="Back"></input>
+                    )
+                    : ''}
                 <input className="submit" type="submit"></input>
             </div>
         </form>
