@@ -43,20 +43,21 @@ We will check your work using Chrome’s built in emulator, using the “Apple i
 
 
 **Getting started**
+- Git clone or download the zip folder
+- cd into directory 
+- Install dependencies
 ```bash
 npm i
 ```
-
-- Development
-```bash
-npm run dev
-```
-
 - Production (serve)
 ```bash
 npm start
 ```
-
+- Open browser and navigate to localhost:3000
+- Development
+```bash
+npm run dev
+```
  
 Based on this very helpful article [https://blog.usejournal.com/creating-a-react-app-from-scratch-f3c693b84658]
 
