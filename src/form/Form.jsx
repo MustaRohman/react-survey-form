@@ -12,14 +12,24 @@ class Form extends Component {
             dob: '',
             location: '',
             dateTime: '',
-            userFeedback: ''
+            userFeedback: '',
+            stepNumber: 0
         }
         this.handleChange = this.handleChange.bind(this)
     }
 
     handleSubmit(event) {
+        let stepNumber = this.state.stepNumber;
         console.log('submit', event);
         event.preventDefault();
+        if (stepNumber === 0) {
+            if (!this.state.title || !this.state.name || !this.state.dob) {
+                alert('Please ensure that all fields are complete before clicking submit');
+            } else {
+                stepNumber++;
+                this.setState({stepNumber});
+            }
+        }
     }
 
     handleChange(key, value) {
