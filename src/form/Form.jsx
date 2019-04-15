@@ -10,7 +10,7 @@ class Form extends Component {
             title: '',
             name: '',
             dob: '',
-            location: null,
+            location: '',
             dateTime: '',
             userFeedback: '',
             stepNumber: 0
@@ -74,7 +74,7 @@ class Form extends Component {
             {
                 label: 'User Feedback',
                 key: 'userFeedback',
-                type: 'textArea',
+                type: 'textarea',
                 value: this.state.userFeedback
             },
         ]

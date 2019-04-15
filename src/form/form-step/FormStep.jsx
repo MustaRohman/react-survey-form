@@ -67,10 +67,25 @@ function FormStep(props) {
 
                                     <button onClick={(e) => handleDateTimeClick(e, item.key)}>
                                         {item.value
-                                            ? item.value.toString()
+                                            ? item
+                                                .value
+                                                .toString()
                                             : 'Click to get Current Date/Time'}
                                     </button>
                                 </div>
+                            </div>
+                        )
+                    }
+                case 'textarea':
+                    {
+                        return (
+                            <div className="inputItem" key={index}>
+                                <label htmlFor={item.key}>{item.label + ':'}</label>
+                                <textarea
+                                    type={item.type}
+                                    id={item.key}
+                                    onChange={(e) => handleChange(e, item.key)}
+                                    value={item.value}></textarea>
                             </div>
                         )
                     }
