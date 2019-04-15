@@ -40,11 +40,19 @@ class Form extends Component {
                 alert('Please ensure that all fields are complete before clicking submit');
             } else {
                 // Request to API endpoint 'submit-survey'
+                const state = {...this.state, location: {latitude: this.state.location.latitude, longitude: this.state.location.longitude}};
                 this.setState({isComplete: true});
                 console.log(this.state);
-                fetch('/submit-survey', {method: 'POST', body: JSON.stringify(this.state)}).then(res => {
+                fetch('/submit-survey', {
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    method: 'POST',
+                    body: JSON.stringify(state)
+                }).then(res => {
                     console.log('success');
-                    
+
                 }).catch(err => {
                     console.log(err);
                 })
