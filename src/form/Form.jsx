@@ -33,7 +33,6 @@ class Form extends Component {
     }
 
     handleChange(key, value) {
-        console.log(event.target.value);
         // this.setState({title: event.target.value})
         this.setState({[key]: value})
     }
