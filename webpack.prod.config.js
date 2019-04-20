@@ -28,9 +28,10 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             title: TITLE,
-            inject: false,
+            inject: true,
             template: require('html-webpack-template'),
-            appMountId: 'root'
+            appMountId: 'root',
+            meta: {viewport: 'width=device-width, initial-scale=1.0'}
         })
     ]
 };
