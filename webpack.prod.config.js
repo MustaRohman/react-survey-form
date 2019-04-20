@@ -1,10 +1,10 @@
 const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const TITLE = 'title';
+const TITLE = 'Survey Form';
 
 module.exports = {
     entry: "./src/index.js",
-    mode: "development",
+    mode: "production",
     module: {
         rules: [
             {
