@@ -5,7 +5,7 @@ import './FormStep.scss'
 /**
  * Represents a 'page' or 'step' in the Form component
  * PROPS
- * inputs: [{label, key, type, value}]
+ * inputs: [{label, key, type, value}] - Used to build list of inputs in a FormStep
  * onChange: (key, value) => {}
  * onSubmit: (ev) => {}
  * onPrev: () => {}
